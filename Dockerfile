@@ -6,6 +6,8 @@ RUN apk update && \
     pip3 install docker-compose && \
     apk del .docker-compose-deps
 
+RUN set -ex && apk --no-cache add sudo
+
 RUN apk --update add git less openssh && \
     rm -rf /var/lib/apt/lists/* && \
     rm /var/cache/apk/*
